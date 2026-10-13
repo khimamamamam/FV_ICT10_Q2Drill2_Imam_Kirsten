@@ -4,14 +4,163 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css" />
-    <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script><title>ICT 10</title>
+    <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+    <title>Q2 Drill 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        
+    body {
+        background-image: url("https://i.pinimg.com/736x/63/c9/22/63c922986024f0e0bfd90872d719fc76.jpg");
+        color: white;
+        font-family: 'Orbitron', sans-serif;
+        text-align: center;
+        padding-top: 50px;
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("https://i.pinimg.com/736x/63/c9/22/63c922986024f0e0bfd90872d719fc76.jpg");
+        background-size: cover;
+        background-position: center;
+        -webkit-filter: blur(5px);
+        filter: blur(5px);
+        z-index: -1;
+    }
+
+    h1 {
+        font-size: 35px;
+        margin-bottom: 10px;
+        justify-self: center;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: white;
+        text-shadow:
+            0 0 8px rgba(72, 187, 120, 0.6),
+            0 0 18px rgba(46, 139, 87, 0.8);
+    }
+
+    p {
+        color: #d8f3dc;
+        font-size: 16px;
+        font-weight: 600;
+        text-shadow: 0 0 6px rgba(46, 139, 87, 0.8);
+    }
+
+    .box {
+        width: 400px;
+        margin: 30px auto;
+        padding: 30px;
+        border-radius: 15px;
+        background: rgba(18, 53, 36, 0.6);
+        backdrop-filter: blur(15px);
+        box-shadow: 0 0 20px rgba(46, 139, 87, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    input {
+        color: #123524;
+        width: 90%;
+        padding: 12px;
+        margin: 8px;
+        border-radius: 8px;
+        border: none;
+        font-family: 'Orbitron', sans-serif;
+        transition: 0.3s ease;
+    }
+
+    input:hover, input:focus {
+        box-shadow:
+            0 0 8px rgba(72, 187, 120, 0.7),
+            0 0 18px rgba(46, 139, 87, 0.6),
+            0 0 28px rgba(72, 187, 120, 0.4);
+        outline: none;
+    }
+
+    button {
+        margin-top: 15px;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 8px;
+        background-color: #2e8b57;
+        color: white;
+        font-family: 'Orbitron', sans-serif;
+        cursor: pointer;
+    }
+
+    #result {
+        margin-top: 20px;
+        padding: 12px 18px;
+        background: rgba(216, 243, 220, 0.395);
+        border-left: 5px solid #8fbc8f;
+        border-radius: 8px;
+        font-size: 15px;
+        color: #ffffff;
+        box-shadow: 0 0 10px rgba(46, 139, 87, 0.5);
+        white-space: pre-line;
+    }
+
+
+    #result h3 {
+    font-size: 20px;
+    color: #d8f3dc;
+    margin-bottom: 10px;
+}
+
+    #result pre {
+        font-family: 'Orbitron', sans-serif;
+        white-space: pre-wrap;
+        color: white;
+    }
+
+    #result p {
+        margin-bottom: 0;
+    }
+    
+    .add_member {
+        width: auto;
+        padding: 10px 18px;
+        margin-top: 10px;
+        background: #8fbc8f;
+        color: #1a5438;
+        border: none;
+        border-radius: 5px;
+        font-family: 'Orbitron', sans-serif;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .add_member:hover {
+        transform: scale(1.02);
+        box-shadow:
+            0 0 10px #5fa777,
+            0 0 20px #4c956c,
+            0 0 35px rgba(46, 139, 87, 0.7);
+    }
+
+    
     </style>
 </head>
 <body>
-    <h1>PRACTICE SET </h1>
+    <h1>Add new members</h1>
 
+    <div class="box">
+        <input type="text" id="Fname" placeholder="First Name">
+        <input type="text" id="Lname" placeholder="Last Name">
+    
+        <br><br>
+    
+        <button class="add_member" py-click="add_member">
+            Add member
+        </button>
+    
+        <div id="result"></div>
+    </div>
+    
     <script type="py" src="main.py"></script>
 </body>
 </html
